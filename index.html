@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOODIES POINT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <!-- Add favicon -->
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <!-- Add tab logo for Safari -->
+    <link rel="apple-touch-icon" href="images/logo.png">
+</head>
+<body>
+    <!-- body starts here -->
+    <div class='mainBackground'>
+        <header>
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Restaurant Logo" class="logo">
+                <h1>Foodies Point</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><button id="home-btn">Home</button></li>
+                    <li><button id="menu-btn">Menu</button></li>
+                    <li><button id="about-btn">About Us</button></li>
+                    <li><button id="contact-btn">Contact</button></li>
+                    <li><button id="order-btn">Order</button></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section id="home">
+                <h2>WE SERVE PASSION!</h2>
+                <p>Discover FOODIES POINT's wide range of flavors! Use this order form to satisfy your hunger.</p>
+            </section>
+
+            <section id="menu" class="hidden">
+                <h2>Menu</h2>
+                <div class="glide">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <li class="glide__slide" onclick="redirectToOrderForm('Filipino Dish')">
+                                <div class="dish-container">
+                                    <img src="images/FilipinoFoods.jpg" alt="Filipino Dish" class="dish-image">
+                                    <div class="description">
+                                        <h3>Filipino Dish</h3>
+                                        <p>Indulge in the rich flavors of traditional Filipino cuisine, where every bite tells a story of heritage and culture.<br><br></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="glide__slide" onclick="redirectToOrderForm('Italian Dish')">
+                                <div class="dish-container">
+                                    <img src="images/ItalianFoods.jpg" alt="Italian Dish" class="dish-image">
+                                    <div class="description">
+                                        <h3>Italian Dish</h3>
+                                        <p>Experience the essence of Italy with our authentic dishes crafted with the finest ingredients and culinary expertise.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="glide__slide" onclick="redirectToOrderForm('Mexican Dish')">
+                                <div class="dish-container">
+                                    <img src="images/MexicanFoods.jpg" alt="Mexican Dish" class="dish-image">
+                                    <div class="description">
+                                        <h3>Mexican Dish</h3>
+                                        <p>Delight your taste buds with the vibrant and spicy flavors of Mexican cuisine, a fiesta for your senses.<br><br></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="glide__slide" onclick="redirectToOrderForm('Japanese Dish')">
+                                <div class="dish-container">
+                                    <img src="images/JapaneseFoods.jpg" alt="Japanese Dish" class="dish-image">
+                                    <div class="description">
+                                        <h3>Japanese Dish</h3>
+                                        <p>Embark on a culinary journey to Japan with our authentic dishes that showcase the artistry and precision of Japanese cuisine.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="glide__slide" onclick="redirectToOrderForm('Korean Dish')">
+                                <div class="dish-container">
+                                    <img src="images/KoreanFoods.jpg" alt="Korean Dish" class="dish-image">
+                                    <div class="description">
+                                        <h3>Korean Dish</h3>
+                                        <p>Experience the bold and savory flavors of Korea with our delicious selection of traditional Korean dishes.<br><br></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Add descriptions for other dishes -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="order" class="hidden">
+                <!-- form starts here -->
+                <div class='order-form-container'>
+                    <!-- header part -->
+                    <header class='order-form-header'>
+                        <h1>FOODIES POINT: Order Form</h1>
+                    </header>
+                    <!-- ends here -->
+            
+                    <!-- form contents -->
+                    <form action='' method='get' class='order-form'>
+                        <!-- name, email, and age part -->
+                        <div class='form-row'>
+                            <label for='full-name'>Name</label>
+                            <input id='full-name' name='full-name' type='text' />
+                        </div>
+            
+                        <div class='form-row'>
+                            <label for='email'>Email</label>
+                            <input id='email' name='email' type='email' />
+                        </div>
+            
+                        <div class='form-row'>
+                            <label for='age'>Age</label>
+                            <input id='age' name='age' type='number' />
+                        </div>
+            
+                        <!-- advance drop down (type of cuisine) -->
+                        <div class="form-row">
+                            <div class="dropdown">
+                                <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                                    <span id="dropdownText">Type of Cuisine</span>
+                                    <i class="fa-solid fa-caret-down"></i> <!-- Caret down icon -->
+                                </button>
+                                <ul class="menu">
+                                    <li class="menu-item"><a href="#">Filipino</a></li>
+                                    <li class="menu-item"><a href="#">Italian</a></li>
+                                    <li class="menu-item"><a href="#">Mexican</a></li>
+                                    <li class="menu-item"><a href="#">Japanese</a></li>
+                                    <li class="menu-item"><a href="#">Korean</a></li>
+            
+                                    <li class="menu-item dropdown">
+                                        <a href="#" class="submenu-toggle">
+                                            <span>Healthy Options</span>
+                                            <i class="fa-solid fa-caret-right"></i> <!-- Caret right icon -->
+                                        </a>
+                                        <ul class="submenu">
+                                            <li class="submenu-item"><a href="#">Vegetarian</a></li>
+                                            <li class="submenu-item"><a href="#">Vegan</a></li>
+                                            <li class="submenu-item"><a href="#">Gluten-Free</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item dropdown">
+                                        <a href="#" class="submenu-toggle">
+                                            <span>Specials</span>
+                                            <i class="fa-solid fa-caret-right"></i> <!-- Caret right icon -->
+                                        </a>
+                                        <ul class="submenu">
+                                            <li class="submenu-item"><a href="#">Stake 'n Shake</a></li>
+                                            <li class="submenu-item"><a href="#">Fiesty Fork</a></li>
+                                            <li class="submenu-item"><a href="#">Earth's Salad</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                        <!-- dropdown (mode of payment) -->
+                        <div class='form-row'>
+                            <label for='mop'>Mode of Payment</label>
+                            <select id='mop' name='mop' required>
+                                <option value='' disabled>-- Choose a payment type --</option>
+                                <option value='cash'>Cash</option>
+                                <option value='gcash'>GCash</option>
+                                <option value='paymaya'>PayMaya</option>
+                            </select>
+                        </div>
+            
+                        <!-- radiobutton (dining options) -->
+                        <fieldset class='legacy-form-row'>
+                            <legend>Dining Options</legend>
+                            <input id='dining-option-1' name='dining-option' type='radio' value='dine-in' checked />
+                            <label for='dining-option-1' class='radio-label'>Dine - in</label>
+            
+                            <input id='dining-option-2' name='dining-option' type='radio' value='take-out' />
+                            <label for='dining-option-2' class='radio-label'>Take - out</label>
+                        </fieldset>
+            
+                        <!-- textarea (comments/instructions) -->
+                        <div class='form-row'>
+                            <label for='abstract'>Comments / Instructions</label>
+                            <textarea id='abstract' name='abstract'></textarea>
+                            <div class='instructions'>You can put your comments or instructions here.</div>
+                        </div>
+            
+                        <!-- order placed and cancel button -->
+                        <div class='button-row'>
+                            <button type='button' id='place-order'>Place Order</button>
+                            <button type='button' id='cancel'><span id='cancelSpan'>Cancel</span></button>
+                        </div>
+                    </form>
+                    <!-- form contents ends here -->
+                </div>
+                <!-- form ends here -->
+            </section>
+
+            <section id="about" class="hidden">
+                <h2>About Us</h2>
+                <p>Our story and mission.</p>
+            </section>
+
+            <section id="contact" class="hidden">
+                <h2>Contact</h2>
+                <p>Get in touch with us.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Restaurant Name. All rights reserved.</p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+        <script src="js/script.js"></script>
+        <script>
+            function redirectToOrderForm(dishName) {
+                // Find the order section
+                const orderSection = document.getElementById('order');
+                // Scroll to the order section
+                orderSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        </script>
+    </div>
+</body>
+</html>
